@@ -5,8 +5,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-
-    const [count, setCount] = useState(0); // eslint-disable-line
+  // const [count, setCount] = useState(0); // eslint-disable-line
+  const [count, setCount] = useState<number>(0);
 
   return (
     <>

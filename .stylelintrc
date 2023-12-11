@@ -1,3 +1,6 @@
 {
-  "extends": "@hh.ru/stylelint-config-hh"
+  "extends": "@hh.ru/stylelint-config-hh",
+  "plugins": [
+    "stylelint-scss"
+  ]
 }
