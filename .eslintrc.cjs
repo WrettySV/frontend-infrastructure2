@@ -2,17 +2,37 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
+    // "eslint:recommended",
+    "@hh.ru/eslint-config",
+    "prettier",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:react-hooks/recommended"
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+
+  "overrides": [
+    {
+      "files": "*.{ts,tsx}",
+      "extends": "@hh.ru/eslint-config/typescript",
+    },
+  ],
+
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'prettier'],
   rules: {
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
+    indent: ['error', 4],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'double'],
+    semi: ['error', 'always'],
+
+    'no-empty': 'warn',
+    'no-cond-assign': ['error', 'always'],
+
+    'for-direction': 'off',
   },
-}
+};
